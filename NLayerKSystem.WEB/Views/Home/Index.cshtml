@@ -1,0 +1,130 @@
+﻿@model NLayerKSystem.WEB.Models.pagingHelpers.IndexViewModel
+
+@using NLayerKSystem.WEB.Models.viewModel
+@using NLayerKSystem.WEB.Models.pagingHelpers
+
+@{
+	ViewBag.Title = "Manager Page";
+}
+
+<div style="margin-top: 100px">
+
+	<div class="col-lg-3" style="display:table; margin-top: 10px;">
+		@using (Ajax.BeginForm("Index", new { },
+				new AjaxOptions
+				{
+					HttpMethod = "GE",
+					InsertionMode = InsertionMode.InsertAfter
+				},
+				new { @class = "form-horizonral" }
+				))
+
+		{
+			@Html.AntiForgeryToken()
+
+			<div class="dropdown col-lg-4" style="width:100%">
+				<labe>Образование:</labe>
+				@Html.DropDownListFor(model => model.EducationId, Model.EducationViewModels.Select(m => new SelectListItem() { Value = m.Id.ToString(), Text = m.Name }), "Please Select",
+			   new { @class = "form-control"})
+			</div>
+
+			<div class="dropdown col-lg-4" style="width:100%; margin-top: 25px;">
+				<labe>Опыт работы в компаний:</labe>
+				@Html.DropDownListFor(model => model.ExperienceId, Model.ExperienceViewModels.Select(m => new SelectListItem() { Value = m.Id.ToString(), Text = m.CompanyName }), "Please Select",
+				new { @class = "form-control" })
+			</div>
+
+			<div class="dropdown col-lg-4" style="width:100%; margin-top: 25px;">
+				<labe>Повышение квалификации:</labe>
+
+				@Html.DropDownListFor(model => model.TrainingId, Model.TrainingViewModels.Select(m => new SelectListItem() { Value = m.Id.ToString(), Text = m.Resource }), "Please Select",
+				new { @class = "form-control" })
+			</div>
+
+			<div class="dropdown col-lg-4" style="width:100%; margin-top: 25px;">
+				<labe>Тесты для сертификации:</labe>
+
+				@Html.DropDownListFor(model => model.CertificationId, Model.CertificationViewModels.Select(m => new SelectListItem() { Value = m.Id.ToString(), Text = m.Resource }), "Please Select",
+				new { @class = "form-control" })
+			</div>
+
+			<div class="dropdown col-lg-4" style="width:100%; margin-top: 25px;">
+				<labe>Спортивное программирование:</labe>
+
+				@Html.DropDownListFor(model => model.SportProgrammingId, Model.SportProgrammingViewModels.Select(m => new SelectListItem() { Value = m.Id.ToString(), Text = m.Resourse }), "Please Select",
+				new { @class = "form-control" })
+			</div>
+
+			<div style="margin-left: 15px;">
+				<button class="btn btn-success" style="margin-top:20px; width:100%" type="submit">Найти</button>
+			</div>
+		}
+	</div>
+
+	<div class="col-lg-1" style="border-left:1px solid #d7dee8; height:500px; margin-bottom: 100px"></div>
+
+	<div class="col-lg-8">
+		@if (Model.SelectionJoinQueryResultViewModels.Count() != 0)
+		{
+			foreach (var item in Model.SelectionJoinQueryResultViewModels)
+			{
+				<div class="card" style="background:#f9fbfc; border-radius: 4px; border:1px solid #d7dee8;  padding: 20px;  height: 150px;  width:100%; display:table; margin-right: 15px; margin-bottom:0px">
+
+					<div class="col-lg-3">
+						<img style="border-radius: 50%" src="@Url.Content(item.User.Photo)" height="140" width="140" alt="Candidate photo">
+					</div>
+
+					<div class="col-lg-9">
+						<div class="card-body">
+							<h3 class="card-title" style="margin-top:0px">@item.User.Name</h3>
+							<p class="card-text"><font color="gray">страна: </font> @item.User.City.Country.Name,<font color="gray"> город: </font>@item.User.City.Name</p>
+							<p class="card-text"><font color="gray">университет - GPA: </font>@item.EducationsNameGpa</p>
+							<p class="card-text"><font color="gray">опыт работы:</font> @item.ExperiencesName</p>
+							<p class="card-text"><font color="gray">курсы: </font> @item.TrainingsResource</p>
+							<p class="card-text"><font color="gray">сертификаты:</font> @item.CertificatioinTestsResource</p>
+
+							<a class="btn btn-info" href="@Url.Action("DetailCandidate","Home", new { userId = item.User.Id})">Перейти</a>
+						</div>
+					</div>
+				</div>
+			}
+		}
+		else
+		{
+			<h2><font color="gray"> По запросу ничего не найдено</font></h2>
+		}
+
+		<!-- pager -->
+		@if (Model.Pager.EndPage > 1)
+		{
+			<ul class="pagination">
+				@if (Model.Pager.CurrentPage > 1)
+				{
+					<li>
+						<a href="~/Home/Index">First</a>
+					</li>
+					<li>
+						<a href="~/Home/Index?page=@(Model.Pager.CurrentPage - 1)">Previous</a>
+					</li>
+				}
+
+				@for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
+				{
+					<li class="@(page == Model.Pager.CurrentPage ? "active" : "")">
+						<a href="~/Home/Index?page=@page">@page</a>
+					</li>
+				}
+
+				@if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+				{
+					<li>
+						<a href="~/Home/Index?page=@(Model.Pager.CurrentPage + 1)">Next</a>
+					</li>
+					<li>
+						<a href="~/Home/Index?page=@(Model.Pager.TotalPages)">Last</a>
+					</li>
+				}
+			</ul>
+		}
+	</div>
+</div>

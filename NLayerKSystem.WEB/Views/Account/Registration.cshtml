@@ -1,0 +1,9 @@
+﻿@model NLayerKSystem.WEB.Models.pagingHelpers.IndexViewModel<UserViewModel, RoleViewModel, CityViewModel>
+
+@using NLayerKSystem.WEB.Models.viewModel
+@{
+	ViewBag.Title = "Registration";
+	Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+@{ Html.RenderPartial("Create", new UserViewModel() { RoleViewModels = Model.ListOfViewModel2, CityViewModels = Model.ListOfViewModel3 }); }

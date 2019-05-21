@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA1E2343-7382-4A89-9970-372159980E98}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NLayerKSystem.BLL</RootNamespace>
+    <AssemblyName>NLayerKSystem.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLLModule.cs" />
+    <Compile Include="DTO\CertificationTestDTO.cs" />
+    <Compile Include="DTO\CityDTO.cs" />
+    <Compile Include="DTO\CountryDTO.cs" />
+    <Compile Include="DTO\EducationDTO.cs" />
+    <Compile Include="DTO\ExperienceDTO.cs" />
+    <Compile Include="DTO\KnowledgeDTO.cs" />
+    <Compile Include="DTO\NominationDTO.cs" />
+    <Compile Include="DTO\ProjectDTO.cs" />
+    <Compile Include="DTO\ReviewDTO.cs" />
+    <Compile Include="DTO\RoleDTO.cs" />
+    <Compile Include="DTO\SelectionDTO.cs" />
+    <Compile Include="DTO\SelectionJoinQueryResultDTO.cs" />
+    <Compile Include="DTO\SelectionUserDTO.cs" />
+    <Compile Include="DTO\SportProgrammingDTO.cs" />
+    <Compile Include="DTO\SubjectDTO.cs" />
+    <Compile Include="DTO\TrainingDTO.cs" />
+    <Compile Include="Interface\IService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\CertificationTestService.cs" />
+    <Compile Include="Service\CityService.cs" />
+    <Compile Include="Service\CountryService.cs" />
+    <Compile Include="Service\EducationService.cs" />
+    <Compile Include="Service\ExperienceService.cs" />
+    <Compile Include="Service\KnowledgeService.cs" />
+    <Compile Include="Service\NominationService.cs" />
+    <Compile Include="Service\ProjectService.cs" />
+    <Compile Include="Service\ReviewService.cs" />
+    <Compile Include="Service\RoleService.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="Service\SelectionService.cs" />
+    <Compile Include="Service\SelectionUserService.cs" />
+    <Compile Include="Service\SportProgrammingService.cs" />
+    <Compile Include="Service\SubjectService.cs" />
+    <Compile Include="Service\TrainingService.cs" />
+    <Compile Include="Service\UserService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NLayerKSystem.DAL\NLayerKSystem.DAL.csproj">
+      <Project>{50800d34-5eb6-4721-9775-026553233946}</Project>
+      <Name>NLayerKSystem.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TestEF\TestEF.csproj">
+      <Project>{AF882ED3-3CF8-4423-AD66-212B30FE3D9C}</Project>
+      <Name>TestEF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

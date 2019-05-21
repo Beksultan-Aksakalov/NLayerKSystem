@@ -1,0 +1,149 @@
+﻿@model NLayerKSystem.WEB.Models.pagingHelpers.IndexViewModelDetailCandidate
+
+@using System.Linq;
+@using NLayerKSystem.WEB.Areas.Admin.Models.pagingHelpers;
+@using NLayerKSystem.WEB.Areas.Admin.Models.viewModel;
+@{
+	ViewBag.Title = "DetailCandidate";
+	Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+@foreach (var item in Model.ListOfViewModelUser)
+{
+	<div class="card" style="background:#f9fbfc; border-radius: 2px; border:1px solid #d7dee8;  padding: 20px;  height: 150px;  width:70%; display:table;  margin-bottom:0px; margin-top:50px;">
+
+		<div class="col-md-2" style="margin-right:20px">
+			<img style="border-radius: 50%" src="@Url.Content(item.Photo)" height="140" width="140" alt="Candidate photo">
+		</div>
+
+		<div class="col-md-7" style="margin-left:30px">
+			<div class="card-body">
+				<h3 class="card-title" style="margin-top:0px">@item.Name</h3>
+				<p class="card-text"><font color="gray">страна: </font> @item.City.Country.Name,<font color="gray"> город: </font>@item.City.Name</p>
+
+				<p class="card-text">
+					<font color="gray">университет - GPA: </font>
+					@foreach (var edu in Model.listOfViewModelEducation)
+					{
+						@Html.Raw(edu.Name + " - " + edu.GPA);
+					}
+				</p>
+
+				<p class="card-text">
+					<font color="gray">опыт работы:</font>
+					@foreach (var exp in Model.listOfViewModelExperience)
+					{
+						@Html.Raw("/ " + exp.CompanyName);
+					}
+				</p>
+
+				<p class="card-text">
+					<font color="gray">курсы:</font>
+					@foreach (var tr in Model.listOfViewModelTraining)
+					{
+						@Html.Raw("/ " + tr.Resource);
+					}
+				</p>
+
+				<p class="card-text">
+					<font color="gray">спортивное программирование:</font>
+					@foreach (var sp in Model.listOfViewModelSportProgramming)
+					{
+						@Html.Raw("/ " + sp.Resourse);
+					}
+				</p>
+
+				<p class="card-text">
+					<font color="gray">сертификаты:</font>
+					@foreach (var cert in Model.listOfViewModelCertificationTest)
+					{
+						@Html.Raw("/ " + cert.Resource);
+					}
+				</p>
+
+				<p class="card-text"><font color="gray">предпочитаемый способ связи: </font>@item.Email</p>
+			</div>
+		</div>
+		<div class="col-md-1">
+			<a class="btn btn-default" data-target="#myModal_@item.Id" data-toggle="modal">Добавить +</a>
+		</div>
+	</div>
+
+}
+
+<hr>
+
+<div class="card" style="background:#f9fbfc; border-radius: 4px; border:1px solid #d7dee8;  padding: 20px;  height: 150px;  width:100%; display:table; margin-right: 15px; margin-bottom:0px; margin-top:20px;">
+	<div>
+		<h4>
+			<font color="teal">Образование</font>
+		</h4>
+		@foreach (var item in Model.listOfViewModelEducation)
+		{
+			<p>Страна и город обучение: @item.City.Country.Name, г. @item.City.Name</p>
+			<p>@Html.Raw("Университет и GPA: " + item.Name + " - " + item.GPA);</p>
+			<p>Диплом фото</p>
+			<img style="border-radius: 5%" src="@Url.Content(item.DiplomaPhoto)" height="140" width="140" alt="Candidate photo">
+		}
+	</div>
+	<hr />
+	<div style="margin-top: 20px">
+		<h4>
+			<font color="teal">Опыт работы</font>
+		</h4>
+		@foreach (var item in Model.listOfViewModelExperience)
+		{
+			@Html.Raw(" / " + item.CompanyName + " - " + item.CountExperience);
+		}
+
+	</div>
+
+	<hr />
+	<div style="margin-top: 20px">
+		<h4>
+			<font color="teal">Транинги</font>
+		</h4>
+		@foreach (var item in Model.listOfViewModelTraining)
+		{
+			@Html.Raw(" / " + item.Resource + " - " + item.Duration + ", Оценка за курс: " + item.FinalEvaluation);
+		}
+		<p></p>
+		<p>Проект фото</p>
+		@foreach (var item in Model.listOfViewModelTraining)
+		{
+			<img style="border-radius: 5%" src="@Url.Content(item.ProjectPhoto)" height="140" width="140" alt="Candidate photo">
+		}
+	</div>
+
+	<hr />
+	<div style="margin-top: 20px">
+		<h4>
+			<font color="teal">Сертификаты</font>
+		</h4>
+		@foreach (var item in Model.listOfViewModelCertificationTest)
+		{
+			@Html.Raw(" / " + item.Resource + ", Оценка: " + item.Evaluation);
+		}
+		<p></p>
+		<p>Сертификат фото</p>
+		@foreach (var item in Model.listOfViewModelCertificationTest)
+		{
+			<img style="border-radius: 5%" src="@Url.Content(item.CertificationPhoto)" height="140" width="140" alt="Candidate photo">
+		}
+	</div>
+
+	<hr />
+	<div>
+		<h4>
+			<font color="teal">Спортивное программирование</font>
+		</h4>
+			@foreach (var sp in Model.listOfViewModelSportProgramming)
+			{
+				@Html.Raw("/ " + sp.Resourse + ", Уровень: " + sp.Level);
+			}
+	</div>
+</div>
+
+<div>
+
+</div>

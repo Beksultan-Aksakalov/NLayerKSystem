@@ -1,0 +1,29 @@
+﻿@model NLayerKSystem.WEB.Areas.Admin.Models.viewModel.RoleViewModel
+
+@using ((Ajax.BeginForm("Edit", new { },
+			new AjaxOptions
+			{
+				HttpMethod = "POST",
+				InsertionMode = InsertionMode.InsertAfter
+			},
+			new { @class = "form-horizonral" }
+			))
+)
+{
+	@Html.AntiForgeryToken()
+
+	<div class="modal-header">
+		<a href="#" class="close" data-dismiss="modal">&times;</a>
+		<h3 class="modal-title">Edit Role</h3>
+	</div>
+	<div class="modal-body">
+		@Html.HiddenFor(model => model.Id, new { htmlAttributes = new { @class = "form-control" } })
+		@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+		@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+		<input type="submit" value="Edit" class="btn btn-info" />
+	</div>
+}
+

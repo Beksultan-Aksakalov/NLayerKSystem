@@ -1,0 +1,61 @@
+﻿@model NLayerKSystem.WEB.Models.viewModel.UserViewModel
+
+@{
+	ViewBag.Title = "Login";
+	Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+@using (Html.BeginForm("Login", "Account", FormMethod.Post))
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal" style="margin-bottom: 380px">
+
+		<div class="form-group">
+			<p style="color:red">@TempData["error"]</p>
+		</div>
+
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="form-group">
+			@Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		@*<div class="form-group">
+			@Html.LabelFor(model => model.isConfirmedEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+			<div class="col-md-10">
+				<div class="checkbox">
+					@Html.EditorFor(model => model.isConfirmedEmail)
+					@Html.ValidationMessageFor(model => model.isConfirmedEmail, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>*@
+
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-2">
+				<input type="submit" value="Log in" class="btn btn-success" />
+			</div>
+			<div class="col-md-2">
+				<a href="@Url.Action("Registration","Account")" class="btn btn-default" style="margin-left:5px">Register</a>
+			</div>
+		</div>
+
+		<h4 style="color:cornflowerblue">Если вы еще не зарегистрированы, то пройдите сперва регистрацию</h4>
+
+		<div class="form-group">
+			
+		</div>
+	</div>
+}

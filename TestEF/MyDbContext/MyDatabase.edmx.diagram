@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="26ccc251774c49a6a7f08a924a3a4a17" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="KSysContextModel.City" Width="1.5" PointX="4.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KSysContextModel.Country" Width="1.5" PointX="6.375" PointY="0.5" IsExpanded="true" />
+        <AssociationConnector Association="KSysContextModel.FK_City_ToCountry" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KSysContextModel.Role" Width="1.5" PointX="0.5" PointY="0.625" />
+        <EntityTypeShape EntityType="KSysContextModel.User" Width="1.5" PointX="2.375" PointY="0.625" />
+        <AssociationConnector Association="KSysContextModel.FK_User_ToCity" />
+        <AssociationConnector Association="KSysContextModel.FK_User_ToRole" />
+        <EntityTypeShape EntityType="KSysContextModel.Review" Width="1.5" PointX="3.25" PointY="5.375" />
+        <AssociationConnector Association="KSysContextModel.FK_Review_ToUser" />
+        <EntityTypeShape EntityType="KSysContextModel.Education" Width="1.5" PointX="6.375" PointY="2.375" />
+        <AssociationConnector Association="KSysContextModel.FK_Education_ToCity" />
+        <AssociationConnector Association="KSysContextModel.FK_Education_ToUser" />
+        <EntityTypeShape EntityType="KSysContextModel.Knowledge" Width="1.5" PointX="3.25" PointY="7.375" />
+        <AssociationConnector Association="KSysContextModel.FK_Knowledge_ToParentId" />
+        <EntityTypeShape EntityType="KSysContextModel.Nomination" Width="1.5" PointX="10.25" PointY="2.5" />
+        <EntityTypeShape EntityType="KSysContextModel.Subject" Width="1.5" PointX="8.25" PointY="2.375" />
+        <AssociationConnector Association="KSysContextModel.FK_Subject_ToEducation" />
+        <AssociationConnector Association="KSysContextModel.FK_Subject_ToKnowledge" />
+        <AssociationConnector Association="KSysContextModel.FK_Subject_ToNomination" />
+        <EntityTypeShape EntityType="KSysContextModel.Experience" Width="1.5" PointX="6.5" PointY="5.625" />
+        <EntityTypeShape EntityType="KSysContextModel.Project" Width="1.5" PointX="10.25" PointY="5" />
+        <AssociationConnector Association="KSysContextModel.FK_Experience_ToCity" />
+        <AssociationConnector Association="KSysContextModel.FK_Experience_ToKnowledge" />
+        <AssociationConnector Association="KSysContextModel.FK_Experience_ToUser" />
+        <AssociationConnector Association="KSysContextModel.FK_Project_ToExperience" />
+        <AssociationConnector Association="KSysContextModel.FK_Project_ToNomination" />
+        <EntityTypeShape EntityType="KSysContextModel.Training" Width="1.5" PointX="8.25" PointY="9" />
+        <AssociationConnector Association="KSysContextModel.FK_Training_ToCity" />
+        <AssociationConnector Association="KSysContextModel.FK_Training_ToKnowledge" />
+        <AssociationConnector Association="KSysContextModel.FK_Training_ToUser" />
+        <EntityTypeShape EntityType="KSysContextModel.CertificationTest" Width="1.5" PointX="6.5" PointY="9" />
+        <AssociationConnector Association="KSysContextModel.FK_CertificationTest_ToCity" />
+        <AssociationConnector Association="KSysContextModel.FK_CertificationTest_ToKnowledge" />
+        <AssociationConnector Association="KSysContextModel.FK_CertificationTest_ToUser" />
+        <EntityTypeShape EntityType="KSysContextModel.SportProgramming" Width="1.5" PointX="10.125" PointY="9" />
+        <AssociationConnector Association="KSysContextModel.FK_SportProgramming_ToCity" />
+        <AssociationConnector Association="KSysContextModel.FK_SportProgramming_ToKnowledge" />
+        <AssociationConnector Association="KSysContextModel.FK_SportProgramming_ToUser" />
+        <EntityTypeShape EntityType="KSysContextModel.Selection" Width="1.5" PointX="0.5" PointY="5.375" />
+        <AssociationConnector Association="KSysContextModel.FK_Selection_ToCertificationTest" />
+        <AssociationConnector Association="KSysContextModel.FK_Selection_ToEducation" />
+        <AssociationConnector Association="KSysContextModel.FK_Selection_ToExperience" />
+        <AssociationConnector Association="KSysContextModel.FK_Selection_ToSportProgramming" />
+        <AssociationConnector Association="KSysContextModel.FK_Selection_ToTraining" />
+        <EntityTypeShape EntityType="KSysContextModel.SelectionUser" Width="1.5" PointX="0.5" PointY="2.625" />
+        <AssociationConnector Association="KSysContextModel.FK_SelectionUser_ToSelection" />
+        <AssociationConnector Association="KSysContextModel.FK_SelectionUser_ToUser" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
