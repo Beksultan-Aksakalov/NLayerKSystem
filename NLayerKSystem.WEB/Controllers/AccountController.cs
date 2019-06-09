@@ -63,7 +63,7 @@ namespace NLayerKSystem.WEB.Controllers
                 } else if (user.Role.Id == 1)
                 {
                     FormsAuthentication.SetAuthCookie(model.Email, true);
-                    return RedirectToAction("Index", "Programmer");
+                    return RedirectToAction("Index", "Candidate");
                 }
                 else
                 {

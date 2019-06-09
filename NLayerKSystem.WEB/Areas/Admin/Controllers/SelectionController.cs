@@ -88,7 +88,7 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             {
                 SelectionDTO selectionDTO = new SelectionDTO
                 {
-                    Name = model.Name,
+                    Name = model.Name.Trim(),
                     EducationId = model.EducationId,
                     ExperienceId = model.ExperienceId,
                     TrainingId = model.TrainingId,
@@ -126,7 +126,7 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             SelectionDTO selectionDTO = new SelectionDTO
             {
                 Id = model.Id,
-                Name = model.Name,
+                Name = model.Name.Trim(),
                 EducationId = model.EducationId,
                 ExperienceId = model.ExperienceId,
                 TrainingId = model.TrainingId,

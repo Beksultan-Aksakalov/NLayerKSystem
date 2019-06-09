@@ -87,7 +87,7 @@ namespace NLayerKSystem.BLL.Service
         public IEnumerable<UserDTO> GetByUserId(int userId)
         {
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<User, UserDTO>()).CreateMapper();
-            return mapper.Map<IEnumerable<User>, IEnumerable<UserDTO>>(Database.Users.GetByUserId(userId));
+            return mapper.Map<IEnumerable<User>,IEnumerable<UserDTO>>(Database.Users.GetByUserId(userId));
         }
 
         public UserDTO CheckToExistUserEmail(UserDTO model)
@@ -116,6 +116,17 @@ namespace NLayerKSystem.BLL.Service
 
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<User, UserDTO>()).CreateMapper();
             return mapper.Map<User, UserDTO>(Database.Users.CheckToExistUserEmail(user));
+        }
+
+        public UserDTO GetUser(int userId)
+        {
+            var mapper = new MapperConfiguration(cfg => cfg.CreateMap<User, UserDTO>()).CreateMapper();
+            return mapper.Map<User, UserDTO>(Database.Users.GetUser(userId));
+        }
+
+        IEnumerable<UserDTO> IService<UserDTO>.GetByUserId(int userId)
+        {
+            throw new NotImplementedException();
         }
     }
 }

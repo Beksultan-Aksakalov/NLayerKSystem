@@ -49,7 +49,7 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             {
                 var roleDTO = new RoleDTO
                 {
-                    Name = model.Name
+                    Name = model.Name.Trim()
                 };
 
                 roleService.Create(roleDTO);
@@ -81,7 +81,7 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             RoleDTO role = new RoleDTO
             {
                 Id = model.Id,
-                Name = model.Name
+                Name = model.Name.Trim()
             };
 
             roleService.Update(role);

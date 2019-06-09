@@ -53,8 +53,8 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             {
                 var knowledgeDTO = new KnowledgeDTO
                 {
-                    Name = model.Name,
-                    Description = model.Description,
+                    Name = model.Name.Trim(),
+                    Description = model.Description.Trim(),
                     ParentId = model.ParentId                    
                 };
 
@@ -89,7 +89,7 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             {
                 Id = model.Id,
                 Name = model.Name.Trim(),
-                Description = model.Description,
+                Description = model.Description.Trim(),
                 ParentId = model.ParentId
             };
 

@@ -95,6 +95,11 @@ namespace NLayerKSystem.DAL.Repositories
             throw new NotImplementedException();
         }
 
+        public Selection GetUser(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
         public class SelectionJoinQueryResult
         {
             public User User { get; set; }

@@ -16,6 +16,7 @@ namespace NLayerKSystem.BLL.Interface
         T GetUserByRoleId(int? roleId);
         T CheckToExistUserEmail(T model);
         T CheckToExistUserEmailAndPassword (T model);
+        T GetUser(int userId);
         IEnumerable<T> GetByUserId(int userId);
         IEnumerable<T> Find(Func<T, Boolean> predicate);
         IEnumerable<Object> FindJoin(T select);

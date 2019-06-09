@@ -38,23 +38,29 @@ namespace NLayerKSystem.WEB.Models.pagingHelpers
         
     }
     
-    public class IndexViewModelDetailCandidate
+    public class IndexViewModelCandidate
     {
-        public IEnumerable<UserViewModel> ListOfViewModelUser { get; set; }
+        public UserViewModel UserViewModel { get; set; }
 
-        public IEnumerable<EducationViewModel> listOfViewModelEducation { get; set; }
+        public IEnumerable<UserViewModel> ListUserViewModel { get; set; }
 
-        public IEnumerable<ExperienceViewModel> listOfViewModelExperience { get; set; }
+        public IEnumerable<CityViewModel> ListOfViewModelCity { get; set; }
 
-        public IEnumerable<TrainingViewModel> listOfViewModelTraining { get; set; }
+        public IEnumerable<EducationViewModel> ListOfViewModelEducation { get; set; }
 
-        public IEnumerable<CertificationViewModel> listOfViewModelCertificationTest { get; set; }
+        public IEnumerable<ExperienceViewModel> ListOfViewModelExperience { get; set; }
 
-        public IEnumerable<SportProgrammingViewModel> listOfViewModelSportProgramming { get; set; }
+        public IEnumerable<TrainingViewModel> ListOfViewModelTraining { get; set; }
 
-        public IEnumerable<ReviewViewModel> listofViewModelReview { get; set; }
+        public IEnumerable<CertificationViewModel> ListOfViewModelCertificationTest { get; set; }
+
+        public IEnumerable<SportProgrammingViewModel> ListOfViewModelSportProgramming { get; set; }
+
+        public IEnumerable<ReviewViewModel> ListofViewModelReview { get; set; }
+
+        public IEnumerable<KnowledgeViewModel> ListofViewModelKnowledge { get; set; }
     }
-
+    
     public class IndexViewModel<T, T2, T3>
     {
         public IEnumerable<T> ListOfViewModel { get; set; }
@@ -63,4 +69,5 @@ namespace NLayerKSystem.WEB.Models.pagingHelpers
 
         public IEnumerable<T3> ListOfViewModel3 { get; set; }
     }
+
 }

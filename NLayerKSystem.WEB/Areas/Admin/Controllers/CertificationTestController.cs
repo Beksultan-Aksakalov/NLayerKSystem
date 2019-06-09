@@ -75,9 +75,9 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
 
                 CertificationTestDTO ct = new CertificationTestDTO
                 {
-                    Resource = model.Resource,
-                    Evaluation = model.Evaluation,
-                    CertificationPhoto = model.CertificationPhoto,
+                    Resource = model.Resource.Trim(),
+                    Evaluation = model.Evaluation.Trim(),
+                    CertificationPhoto = model.CertificationPhoto.Trim(),
                     CityId = model.CityId,
                     KnowledgeId = model.KnowledgeId,
                     UserId = model.UserId
@@ -120,9 +120,9 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             CertificationTestDTO ct = new CertificationTestDTO
             {
                 Id = model.Id,
-                Resource = model.Resource,
-                Evaluation = model.Evaluation,
-                CertificationPhoto = model.CertificationPhoto,
+                Resource = model.Resource.Trim(),
+                Evaluation = model.Evaluation.Trim(),
+                CertificationPhoto = model.CertificationPhoto.Trim(),
                 CityId = model.CityId,
                 KnowledgeId = model.KnowledgeId,
                 UserId = model.UserId

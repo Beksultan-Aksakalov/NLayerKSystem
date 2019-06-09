@@ -55,7 +55,7 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             {
                 var reviewDTO = new ReviewDTO
                 {
-                    Comment = model.Comment,
+                    Comment = model.Comment.Trim(),
                     UserId = model.UserId
                 };
 
@@ -89,7 +89,7 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             var reviewDTO = new ReviewDTO
             {
                 Id = model.Id,
-                Comment = model.Comment,
+                Comment = model.Comment.Trim(),
                 UserId = model.UserId
             };
 

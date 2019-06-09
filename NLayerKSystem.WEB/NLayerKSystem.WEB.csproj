@@ -187,7 +187,7 @@
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProgrammerController.cs" />
+    <Compile Include="Controllers\CandidateController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -4792,7 +4792,18 @@
     <Content Include="Views\Account\Registration.cshtml" />
     <Content Include="Views\Account\Create.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Programmer\Index.cshtml" />
+    <Content Include="Views\Candidate\Index.cshtml" />
+    <Content Include="Views\Candidate\UserEdit.cshtml" />
+    <Content Include="Views\Candidate\EducationEdit.cshtml" />
+    <Content Include="Views\Candidate\EducationCreate.cshtml" />
+    <Content Include="Views\Candidate\ExpCreate.cshtml" />
+    <Content Include="Views\Candidate\ExpEdit.cshtml" />
+    <Content Include="Views\Candidate\TrCreate.cshtml" />
+    <Content Include="Views\Candidate\TrEdit.cshtml" />
+    <Content Include="Views\Candidate\CrCreate.cshtml" />
+    <Content Include="Views\Candidate\CrEdit.cshtml" />
+    <Content Include="Views\Candidate\SpCreate.cshtml" />
+    <Content Include="Views\Candidate\SpEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -4851,6 +4862,8 @@
           <DevelopmentServerPort>62525</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:62525/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:62525/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

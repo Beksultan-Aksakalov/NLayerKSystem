@@ -76,5 +76,10 @@ namespace NLayerKSystem.DAL.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Role GetUser(int userId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

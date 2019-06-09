@@ -69,9 +69,9 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
 
                 var educationDTO = new EducationDTO
                 {
-                    Name = model.Name,
+                    Name = model.Name.Trim(),
                     GPA = model.GPA,
-                    DiplomaPhoto = model.DiplomaPhoto,
+                    DiplomaPhoto = model.DiplomaPhoto.Trim(),
                     CityId = model.CityId,
                     UserId = model.UserId
                 };
@@ -113,9 +113,9 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             var educationDTO = new EducationDTO
             {
                 Id = model.Id,
-                Name = model.Name,
+                Name = model.Name.Trim(),
                 GPA = model.GPA,
-                DiplomaPhoto = model.DiplomaPhoto,
+                DiplomaPhoto = model.DiplomaPhoto.Trim(),
                 CityId = model.CityId,
                 UserId = model.UserId
             };

@@ -70,10 +70,10 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
 
                 var userDTO = new UserDTO
                 {
-                    Name = model.Name,
-                    Email = model.Email,
-                    Password = model.Password,
-                    Photo = model.Photo,
+                    Name = model.Name.Trim(),
+                    Email = model.Email.Trim(),
+                    Password = model.Password.Trim(),
+                    Photo = model.Photo.Trim(),
                     CityId = model.CityId,
                     RoleId = model.RoleId
                 };
@@ -115,10 +115,10 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             var userDTO = new UserDTO
             {
                 Id = model.Id,
-                Name = model.Name,
-                Email = model.Email,
-                Password = model.Password,
-                Photo = model.Photo,
+                Name = model.Name.Trim(),
+                Email = model.Email.Trim(),
+                Password = model.Password.Trim(),
+                Photo = model.Photo.Trim(),
                 CityId = model.CityId,
                 RoleId = model.RoleId
             };

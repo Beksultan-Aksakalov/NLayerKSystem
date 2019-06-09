@@ -66,8 +66,8 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             {
                 var subjectDTO = new SubjectDTO
                 {
-                    Name = model.Name,
-                    Description = model.Description,
+                    Name = model.Name.Trim(),
+                    Description = model.Description.Trim(),
                     CountCredit = model.CountCredit,
                     Evaluation = model.Evaluation,
                     NominationId = model.NominationId,
@@ -105,8 +105,8 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             var subjectDTO = new SubjectDTO
             {
                 Id = model.Id,
-                Name = model.Name,
-                Description = model.Description,
+                Name = model.Name.Trim(),
+                Description = model.Description.Trim(),
                 CountCredit = model.CountCredit,
                 Evaluation = model.Evaluation,
                 NominationId = model.NominationId,

@@ -75,11 +75,11 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
 
                 TrainingDTO training = new TrainingDTO
                 {
-                    Resource = model.Resource,
-                    Course = model.Course,
-                    Duration = model.Duration,
+                    Resource = model.Resource.Trim(),
+                    Course = model.Course.Trim(),
+                    Duration = model.Duration.Trim(),
                     FinalEvaluation = model.FinalEvaluation,
-                    ProjectPhoto = model.ProjectPhoto,
+                    ProjectPhoto = model.ProjectPhoto.Trim(),
                     CityId = model.CityId,
                     KnowledgeId = model.KnowledgeId,
                     UserId = model.UserId
@@ -122,11 +122,11 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             TrainingDTO trainingDTO = new TrainingDTO
             {
                 Id = model.Id,
-                Resource = model.Resource,
-                Course = model.Course,
-                Duration = model.Duration,
+                Resource = model.Resource.Trim(),
+                Course = model.Course.Trim(),
+                Duration = model.Duration.Trim(),
                 FinalEvaluation = model.FinalEvaluation,
-                ProjectPhoto = model.ProjectPhoto,
+                ProjectPhoto = model.ProjectPhoto.Trim(),
                 CityId = model.CityId,
                 KnowledgeId = model.KnowledgeId,
                 UserId = model.UserId

@@ -1,0 +1,61 @@
+﻿@model NLayerKSystem.WEB.Models.viewModel.EducationViewModel
+
+@using (Html.BeginForm("EducationCreate", "Candidate", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+	@Html.AntiForgeryToken()
+	<div class="modal-header">
+		<a href="#" class="close" data-dismiss="modal">&times;</a>
+		<h3 class="modal-title">Create Education</h3>
+	</div>
+	<div class="modal-body" style="margin-bottom: 20px">
+		<div class="form-horizontal">
+			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+			@Html.HiddenFor(model => model.Id)
+			@Html.HiddenFor(model => model.DiplomaPhoto)
+			<div class="form-group">
+				<label class="control-label col-md-3">University name </label>
+				<div class="col-md-3">
+					@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.GPA, htmlAttributes: new { @class = "control-label col-md-3" })
+				<div class="col-md-3">
+					@Html.EditorFor(model => model.GPA, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.GPA, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.DiplomaPhoto, htmlAttributes: new { @class = "control-label col-md-3" })
+				<div class="col-md-3">
+					@Html.TextBoxFor(model => model.ImageFile, new { type = "file", accept = "image/x-png, image/gif, image/jpeg, image/jpg", htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.ImageFile, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-3">City</label>
+				<div class="col-md-3">
+					@Html.DropDownListFor(model => model.CityId, Model.CityViewModels.Select(m => new SelectListItem() { Value = m.Id.ToString(), Text=m.Name }),
+					new { @class = "form-control col-md-3"})
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label col-md-3">User</label>
+				<div class="col-md-3">
+					@Html.DropDownListFor(model => model.UserId, Model.UserViewModels.Select(m => new SelectListItem() { Value = m.Id.ToString(), Text=m.Name }),
+					new { @class = "form-control col-md-3"})
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+		<input type="submit" value="Create" class="btn btn-info" />
+	</div>
+}
+

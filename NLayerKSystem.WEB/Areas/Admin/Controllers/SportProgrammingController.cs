@@ -66,8 +66,8 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             {
                 SportProgrammingDTO ct = new SportProgrammingDTO
                 {
-                    Resourse = model.Resourse,
-                    Level = model.Level,
+                    Resourse = model.Resourse.Trim(),
+                    Level = model.Level.Trim(),
                     CityId = model.CityId,
                     KnowledgeId = model.KnowledgeId,
                     UserId = model.UserId
@@ -103,8 +103,8 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             SportProgrammingDTO ct = new SportProgrammingDTO
             {
                 Id = model.Id,
-                Resourse = model.Resourse,
-                Level = model.Level,
+                Resourse = model.Resourse.Trim(),
+                Level = model.Level.Trim(),
                 CityId = model.CityId,
                 KnowledgeId = model.KnowledgeId,
                 UserId = model.UserId

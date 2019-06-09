@@ -93,9 +93,9 @@ namespace NLayerKSystem.WEB.Controllers
 
         public ActionResult DetailCandidate(int userId)
         {
-            var userDTO = userService.GetByUserId(userId);
+            var userDTO = userService.GetUser(userId);
             var mapperUser = new MapperConfiguration(cfg => cfg.CreateMap<UserDTO, UserViewModel>()).CreateMapper();
-            var user = mapperUser.Map<IEnumerable<UserDTO>, IEnumerable<UserViewModel>>(userDTO);
+            var user = mapperUser.Map<UserDTO, UserViewModel>(userDTO);
 
             var educationDTO = educationService.GetByUserId(userId);
             var mapperEducation = new MapperConfiguration(cfg => cfg.CreateMap<EducationDTO, EducationViewModel>()).CreateMapper();
@@ -121,15 +121,15 @@ namespace NLayerKSystem.WEB.Controllers
             var mapperReview = new MapperConfiguration(cfg => cfg.CreateMap<ReviewDTO, ReviewViewModel>()).CreateMapper();
             var review = mapperReview.Map<IEnumerable<ReviewDTO>, IEnumerable<ReviewViewModel>>(reviewDTO);
 
-            IndexViewModelDetailCandidate ivm = new IndexViewModelDetailCandidate
+            IndexViewModelCandidate ivm = new IndexViewModelCandidate
             {
-                ListOfViewModelUser = user,
-                listOfViewModelEducation = education,
-                listOfViewModelExperience = experience,
-                listOfViewModelTraining = training,
-                listOfViewModelCertificationTest = cerTest,
-                listOfViewModelSportProgramming = sportProg,
-                listofViewModelReview = review
+                UserViewModel = user,
+                ListOfViewModelEducation = education,
+                ListOfViewModelExperience = experience,
+                ListOfViewModelTraining = training,
+                ListOfViewModelCertificationTest = cerTest,
+                ListOfViewModelSportProgramming = sportProg,
+                ListofViewModelReview = review
             };
 
             return View(ivm);

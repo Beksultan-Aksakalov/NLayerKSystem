@@ -94,5 +94,10 @@ namespace NLayerKSystem.BLL.Service
         {
             throw new NotImplementedException();
         }
+
+        public RoleDTO GetUser(int userId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

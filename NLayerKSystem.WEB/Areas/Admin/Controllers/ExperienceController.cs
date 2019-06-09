@@ -67,8 +67,8 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             {
                 var experienceDTO = new ExperienceDTO
                 {
-                    CompanyName = model.CompanyName,
-                    CountExperience = model.CountExperience,
+                    CompanyName = model.CompanyName.Trim(),
+                    CountExperience = model.CountExperience.Trim(),
                     CityId = model.CityId,
                     KnowledgeId = model.KnowledgeId,
                     UserId = model.UserId
@@ -104,8 +104,8 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             var experienceDTO = new ExperienceDTO
             {
                 Id = model.Id,
-                CompanyName = model.CompanyName,
-                CountExperience = model.CountExperience,
+                CompanyName = model.CompanyName.Trim(),
+                CountExperience = model.CountExperience.Trim(),
                 CityId = model.CityId,
                 KnowledgeId = model.KnowledgeId,
                 UserId = model.UserId

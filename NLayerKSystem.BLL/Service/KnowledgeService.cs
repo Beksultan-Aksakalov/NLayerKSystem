@@ -93,5 +93,10 @@ namespace NLayerKSystem.BLL.Service
         {
             throw new NotImplementedException();
         }
+
+        public KnowledgeDTO GetUser(int userId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

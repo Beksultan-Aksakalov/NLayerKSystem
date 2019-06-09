@@ -61,10 +61,10 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             {
                 var projectDTO = new ProjectDTO
                 {
-                    Name = model.Name,
-                    Description = model.Description,
-                    Duration = model.Duration,
-                    UseTechnology = model.UseTechnology,
+                    Name = model.Name.Trim(),
+                    Description = model.Description.Trim(),
+                    Duration = model.Duration.Trim(),
+                    UseTechnology = model.UseTechnology.Trim(),
                     CountProgrammers = model.CountProgrammers,
                     NominationId = model.NominationId,
                     ExperienceId = model.ExperienceId
@@ -100,10 +100,10 @@ namespace NLayerKSystem.WEB.Areas.Admin.Controllers
             var projectDTO = new ProjectDTO
             {
                 Id = model.Id,
-                Name = model.Name,
-                Description = model.Description,
-                Duration = model.Duration,
-                UseTechnology = model.UseTechnology,
+                Name = model.Name.Trim(),
+                Description = model.Description.Trim(),
+                Duration = model.Duration.Trim(),
+                UseTechnology = model.UseTechnology.Trim(),
                 CountProgrammers = model.CountProgrammers,
                 NominationId = model.NominationId,
                 ExperienceId = model.ExperienceId

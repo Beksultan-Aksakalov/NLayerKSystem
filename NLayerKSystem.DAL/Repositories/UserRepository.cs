@@ -76,5 +76,10 @@ namespace NLayerKSystem.DAL.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public User GetUser(int userId)
+        {
+            return db.User.Where(m => m.Id == userId).FirstOrDefault();
+        }
     }
 }

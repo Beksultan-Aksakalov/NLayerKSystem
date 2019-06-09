@@ -28,6 +28,7 @@ namespace NLayerKSystem.WEB.Models.viewModel
         }
 
         public IEnumerable<KnowledgeViewModel> KnowledgeViewModels { get; set; }
-
+        public IEnumerable<UserViewModel> UserViewModels { get; set; }
+        public IEnumerable<CityViewModel> CityViewModels { get; set; }
     }
 }

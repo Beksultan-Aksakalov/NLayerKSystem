@@ -80,5 +80,10 @@ namespace NLayerKSystem.DAL.Repositories
         {
             throw new NotImplementedException();
         }
+
+        public Nomination GetUser(int userId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
